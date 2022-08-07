@@ -1,0 +1,31 @@
+import math
+def h11(x):
+    a = []
+    for item in x:
+        a.append(1/(1+ -500*math.exp(item)-30))
+    return a
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.arange(-1, 1,0.01)
+func = h11(x)
+plt.plot(x,func)
+plt.show()
+print(func)
+def h22(x):
+    a = []
+    for item in x:
+        a.append(1/(1+ -500*math.exp(item)+30))
+    return a
+x = np.arange(-1, 1,0.01)
+func = h22(x)
+plt.plot(x,func)
+plt.show()
+print(func)
+def h33(x):
+    return (h11(x)+h22(x))
+x = np.arange(-1, 1,0.01)
+func = h33(x)
+plt.plot(func)
+plt.show()
